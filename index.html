@@ -70,9 +70,11 @@ background-color: rgb(45, 74, 238);
         const content=document.querySelector('.content');
 
         const answer=document.querySelector('.answer');
-        const greetings =['i am fine','none of your bussiness'];
+        const greetings =['i am fine','none of your business'];
 
         const love =['i love you too','i hate you'];
+
+         const love =['hy','hey'];
 
         const SpeechRecognition=window.SpeechRecognition || window.webkitSpeechRecognition;
         const recognition=new SpeechRecognition();
@@ -107,6 +109,10 @@ console.log('voice activated');
             }
             else if(message.includes('I love you')){
                 const finalText=love[Math.floor(Math.random() * love.length)];
+                speech.text=finalText;
+            }
+                 else if(message.includes('hello')){
+                const finalText=hello[Math.floor(Math.random() * hello.length)];
                 speech.text=finalText;
             }
             
